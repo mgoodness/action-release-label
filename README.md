@@ -87,11 +87,11 @@ Action Release Label is released under the [Apache License 2.0](./LICENSE).
 
 <!-- badge links -->
 
-[actions-workflow-lint]: https://github.com/actions-ecosystem/action-release-label/actions?query=workflow%3ALint
-[actions-workflow-lint-badge]: https://img.shields.io/github/workflow/status/actions-ecosystem/action-release-label/Lint?label=Lint&style=for-the-badge&logo=github
+[actions-workflow-lint]: https://github.com/mgoodness/action-release-label/actions?query=workflow%3ALint
+[actions-workflow-lint-badge]: https://img.shields.io/github/actions/workflow/status/mgoodness/action-release-label/Lint?label=Lint&style=for-the-badge&logo=github
 
-[release]: https://github.com/actions-ecosystem/action-release-label/releases
-[release-badge]: https://img.shields.io/github/v/release/actions-ecosystem/action-release-label?style=for-the-badge&logo=github
+[release]: https://github.com/mgoodness/action-release-label/releases
+[release-badge]: https://img.shields.io/github/v/release/mgoodness/action-release-label?style=for-the-badge&logo=github
 
 [license]: LICENSE
-[license-badge]: https://img.shields.io/github/license/actions-ecosystem/action-add-labels?style=for-the-badge
+[license-badge]: https://img.shields.io/github/license/mgoodness/action-add-labels?style=for-the-badge

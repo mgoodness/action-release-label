@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -e
 
-prefix=${INPUT_LABEL_PREFIX}
-labels=${INPUT_LABELS}
+prefix=${LABEL_PREFIX}
+labels=${LABELS}
 
 case "${GITHUB_EVENT_NAME}" in
 
@@ -43,4 +43,4 @@ fi
 
 level=${label#"${prefix}"} # e.g.) 'release/major' => 'major'
 
-echo "::set-output name=level::${level}"
+echo "level=${level}" | tee ${GITHUB_OUTPUT}
