@@ -1,8 +1,8 @@
-# Action Release Label
+# Release Label Action
 
-[![actions-workflow-lint][actions-workflow-lint-badge]][actions-workflow-lint]
-[![release][release-badge]][release]
-[![license][license-badge]][license]
+![actions-workflow-lint](https://github.com/mgoodness/action-release-label/actions/workflows/lint.yml/badge.svg)
+![release](https://img.shields.io/github/v/release/mgoodness/action-release-label)
+![license](https://img.shields.io/github/license/mgoodness/action-add-labels)
 
 ![screenshot](./docs/assets/screenshot-labels.png)
 
@@ -51,9 +51,11 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+        with:
+          show-progress: false
 
-      - uses: actions-ecosystem/action-release-label@v1
+      - uses: mgoodness/action-release-label@v1.3.0
         id: release-label
         if: ${{ github.event.pull_request.merged == true }}
 
@@ -84,14 +86,3 @@ This action is inspired by [haya14busa/action-bumpr](https://github.com/haya14bu
 Copyright 2020 The Actions Ecosystem Authors.
 
 Action Release Label is released under the [Apache License 2.0](./LICENSE).
-
-<!-- badge links -->
-
-[actions-workflow-lint]: https://github.com/mgoodness/action-release-label/actions?query=workflow%3ALint
-[actions-workflow-lint-badge]: https://img.shields.io/github/actions/workflow/status/mgoodness/action-release-label/Lint?label=Lint&style=for-the-badge&logo=github
-
-[release]: https://github.com/mgoodness/action-release-label/releases
-[release-badge]: https://img.shields.io/github/v/release/mgoodness/action-release-label?style=for-the-badge&logo=github
-
-[license]: LICENSE
-[license-badge]: https://img.shields.io/github/license/mgoodness/action-add-labels?style=for-the-badge
