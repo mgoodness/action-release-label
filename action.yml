@@ -1,9 +1,9 @@
 name: Release Label Action
-description: Output semver update level from a label.
-author: Michael Goodness
+author: Michael Goodness <michael.goodness@mlb.com>
 branding:
   icon: paperclip
   color: blue
+description: Output semver update level from a label.
 inputs:
   label_prefix:
     description: A prefix for labels that indicate semver level ({major, minor, patch}).
@@ -20,8 +20,8 @@ runs:
   using: composite
   steps:
     - env:
-        LABEL_PREFIX: ${{ inputs.label_prefix }}
-        LABELS: ${{ inputs.labels }}
+        INPUT_LABEL_PREFIX: ${{ inputs.label_prefix }}
+        INPUT_LABELS: ${{ inputs.labels }}
       id: get-release-label
       run: ${{ github.action_path }}/get-release-label.sh
       shell: bash

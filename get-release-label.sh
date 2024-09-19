@@ -2,8 +2,8 @@
 
 set -e
 
-prefix=${LABEL_PREFIX}
-labels=${LABELS}
+prefix=${INPUT_LABEL_PREFIX}
+labels=${INPUT_LABELS}
 
 case "${GITHUB_EVENT_NAME}" in
 
