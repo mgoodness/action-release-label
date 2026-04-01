@@ -2,14 +2,11 @@
 
 set -e
 
-prefix=${INPUT_LABEL_PREFIX}
-labels=${INPUT_LABELS}
-
 case "${GITHUB_EVENT_NAME}" in
 
 'push')
-    for l in ${labels}; do
-        case ${l#"$prefix"} in # e.g.) 'release/major' => 'major'
+    for l in ${INPUT_LABELS}; do
+        case ${l#"$INPUT_LABEL_PREFIX"} in # e.g.) 'release/major' => 'major'
         'major' | 'minor' | 'patch')
             if [ -z "${label}" ]; then
                 label="${l}"
@@ -22,7 +19,7 @@ case "${GITHUB_EVENT_NAME}" in
     ;;
 
 'pull_request' | 'pull_request_target')
-    label=$(jq -r ".pull_request.labels[].name | select(test(\"$prefix(major|minor|patch)\"))" "${GITHUB_EVENT_PATH}")
+    label=$(jq -r ".pull_request.labels[].name | select(test(\"$INPUT_LABEL_PREFIX(major|minor|patch)\"))" "${GITHUB_EVENT_PATH}")
     ;;
 
 *)
@@ -41,6 +38,6 @@ if [ "$(echo "${label}" | wc -l)" -ne 1 ]; then
     exit 1
 fi
 
-level=${label#"${prefix}"} # e.g.) 'release/major' => 'major'
+level=${label#"${INPUT_LABEL_PREFIX}"} # e.g.) 'release/major' => 'major'
 
 echo "level=${level}" | tee ${GITHUB_OUTPUT}

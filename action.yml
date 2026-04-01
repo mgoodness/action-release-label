@@ -1,8 +1,8 @@
 name: Release Label Action
 author: Michael Goodness <michael.goodness@mlb.com>
 branding:
-  icon: paperclip
   color: blue
+  icon: paperclip
 description: Output semver update level from a label.
 inputs:
   label_prefix:
