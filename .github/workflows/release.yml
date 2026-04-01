@@ -19,7 +19,7 @@ jobs:
       - uses: mgoodness/action-release-label@v1.3.0
         id: release-label
         with:
-          labels: ${{ github.event.pull_request.labels.*.name }}
+          labels: ${{ join(github.event.pull_request.labels.*.name, ' ') }}
 
       - uses: mgoodness/action-get-latest-tag@v1
         id: get-latest-tag
