@@ -40,4 +40,4 @@ fi
 
 level=${label#"${INPUT_LABEL_PREFIX}"} # e.g.) 'release/major' => 'major'
 
-echo "level=${level}" | tee ${GITHUB_OUTPUT}
+echo "level=${level}" | tee "${GITHUB_OUTPUT}"
