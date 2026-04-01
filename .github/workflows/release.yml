@@ -16,7 +16,7 @@ jobs:
         with:
           show-progress: false
 
-      - uses: mgoodness/action-release-label@v1.3.0
+      - uses: mgoodness/action-release-label@v1.3.3
         id: release-label
         with:
           labels: ${{ join(github.event.pull_request.labels.*.name, ' ') }}
