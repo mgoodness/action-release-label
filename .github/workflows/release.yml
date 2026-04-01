@@ -24,7 +24,7 @@ jobs:
         with:
           labels: ${{ steps.get-merged-pull-request.outputs.labels }}
 
-      - uses: actions-ecosystem/action-get-latest-tag@v1
+      - uses: mgoodness/action-get-latest-tag@v1
         id: get-latest-tag
         if: ${{ steps.release-label.outputs.level != null }}
         with:
