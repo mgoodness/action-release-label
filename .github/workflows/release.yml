@@ -21,7 +21,7 @@ jobs:
         with:
           labels: ${{ join(github.event.pull_request.labels.*.name, ' ') }}
 
-      - uses: mgoodness/action-get-latest-tag@v1
+      - uses: mgoodness/action-get-latest-tag@v1.6.0
         id: get-latest-tag
         if: ${{ steps.release-label.outputs.level != null }}
         with:

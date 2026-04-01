@@ -17,7 +17,7 @@ jobs:
         id: release-label
         if: ${{ startsWith(github.event.label.name, 'release/') }}
 
-      - uses: mgoodness/action-get-latest-tag@v1
+      - uses: mgoodness/action-get-latest-tag@v1.6.0
         id: get-latest-tag
         if: ${{ steps.release-label.outputs.level != null }}
         with:
